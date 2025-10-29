@@ -30,7 +30,25 @@ STEP-8: Repeat the above steps to generate the entire cipher text.
 
 
 ## PROGRAM
+```
+message = input("Enter the message: ").upper()
+key = input("Enter the key: ").upper()
+
+cipher_text = ""
+key_index = 0
+
+for char in message:
+    if char.isalpha():  
+        shift = ord(key[key_index]) - 65
+        new_char = chr((ord(char) - 65 + shift) % 26 + 65)
+        cipher_text += new_char
+        key_index = (key_index + 1) % len(key)
+    else:
+        cipher_text += char 
+print("Encrypted Text:", cipher_text)
+```
 
 ## OUTPUT
+<img width="287" height="77" alt="image" src="https://github.com/user-attachments/assets/d58cf133-e1ff-45ea-b4d9-b722250d9b11" />
 
 ## RESULT
